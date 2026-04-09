@@ -5,6 +5,7 @@ Plugin para WooCommerce que adiciona campo de código de rastreio nos pedidos e 
 ## Funcionalidades
 
 - Metabox "Rastreio Frenet" na tela de edição do pedido no painel administrativo
+- Botão de rastreio integrado às páginas de pedidos no front-end (Minha Conta e Shortcode de Rastreamento)
 - Detecção automática da transportadora pelo padrão do código de rastreio:
   - **Correios** — formato `AA000000000AA` (ex: `AB123456789BR`) → `https://rastreio.frenet.com.br/COR/`
   - **Loggi** — 8 caracteres alfanuméricos (ex: `NSWC7NR6`) → `https://rastreio.frenet.com.br/LOG/`
