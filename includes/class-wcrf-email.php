@@ -67,7 +67,7 @@ class WCRF_Tracking_Email extends WC_Email {
 
 		// Pass tracking code to template.
 		$this->tracking_code = $tracking_code;
-		$this->tracking_url  = $this->get_tracking_url( $tracking_code );
+		$this->tracking_url  = WCRF_Helper::get_tracking_url( $tracking_code );
 
 		error_log( '[WC Rastreio Frenet] Tentando enviar. Enabled: ' . ( $this->is_enabled() ? 'Sim' : 'Nao' ) . ' | Recipient: ' . $this->get_recipient() );
 
@@ -77,25 +77,6 @@ class WCRF_Tracking_Email extends WC_Email {
 		}
 
 		$this->restore_locale();
-	}
-
-	/**
-	 * Detect carrier from tracking code and return the appropriate tracking URL.
-	 *
-	 * - Loggi:    8 uppercase alphanumeric chars (e.g. NSWC7NR6)  → /LOG/
-	 * - Correios: standard postal format AA000000000AA (13 chars)  → /COR/
-	 *
-	 * @param string $tracking_code The normalized (uppercase, no spaces) tracking code.
-	 * @return string Full tracking URL.
-	 */
-	private function get_tracking_url( $tracking_code ) {
-		if ( preg_match( '/^[A-Z0-9]{8}$/', $tracking_code ) ) {
-			$endpoint = 'LOG';
-		} else {
-			$endpoint = 'COR';
-		}
-
-		return 'https://rastreio.frenet.com.br/' . $endpoint . '/' . $tracking_code;
 	}
 
 	/**

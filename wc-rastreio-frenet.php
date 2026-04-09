@@ -64,6 +64,9 @@ class WCRF_Plugin {
 		// Init Metabox.
 		new WCRF_Admin_Metabox();
 
+		// Init Front-end Display.
+		new WCRF_Tracking_Display();
+
 		// Register Email Class.
 		add_filter( 'woocommerce_email_classes', array( $this, 'register_email_class' ) );
 	}
@@ -72,7 +75,9 @@ class WCRF_Plugin {
 	 * Load necessary files.
 	 */
 	private function includes() {
+		require_once WCRF_PLUGIN_DIR . 'includes/class-wcrf-helper.php';
 		require_once WCRF_PLUGIN_DIR . 'includes/class-wcrf-admin-metabox.php';
+		require_once WCRF_PLUGIN_DIR . 'includes/class-wcrf-tracking-display.php';
 		// Email class is loaded via the filter callback to avoid early loading issues.
 	}
 
