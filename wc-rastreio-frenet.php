@@ -95,7 +95,6 @@ class WCRF_Plugin
 	 */
 	public function register_email_class($email_classes)
 	{
-		error_log('[WC Rastreio Frenet] Registrando classe de email via filtro woocommerce_email_classes.');
 		require_once WCRF_PLUGIN_DIR . 'includes/class-wcrf-email.php';
 		$email_classes['WCRF_Tracking_Email'] = new WCRF_Tracking_Email();
 		return $email_classes;
