@@ -4,7 +4,7 @@
  * Plugin Name: WC Rastreio Frenet
  * Plugin URI: https://www.fredericodecastro.com.br
  * Description: Adiciona campo de rastreio no pedido e envia e-mail automático para o cliente com link da Frenet.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Frederico de Castro
  * Author URI: https://www.fredericodecastro.com.br
  * Text Domain: wc-rastreio-frenet
